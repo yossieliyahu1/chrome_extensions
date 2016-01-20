@@ -1,0 +1,35 @@
+{
+	"manifest_version":2,
+
+	"name":"Yuvals Chrome Extension",
+	"description":"Work with yuvals.co.il",
+	"version":"1.0",
+
+	"browser_action": {
+		"default_icon":"icon.png",
+		"default_title":"Yuvals Chrome Extension",
+		"default_popup":"popup.html"
+	},
+
+	"background":{
+		"scripts":["background.js"],
+		"persistent":true
+	},
+
+	
+
+	"content_scripts":[
+			{
+				"matches":["http://*/*","https://*/*"],
+				"js":["cscript.js","jquery-1.10.2.js"],
+				"css":["cscript.css"]
+			}
+		],
+
+	"permissions":[
+		"tabs",
+		"storage",
+		"notifications",
+		"contextMenus"
+	]
+}
